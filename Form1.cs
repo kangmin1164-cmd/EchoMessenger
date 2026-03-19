@@ -9,7 +9,7 @@ namespace EchoMessenger
         {
             InitializeComponent();
 
-            // [과제 2 추가] 엔터키 입력을 처리하기 위해 KeyDown 이벤트를 연결합니다.
+            // [과제 2] 엔터키 입력을 처리하기 위해 KeyDown 이벤트를 연결합니다.
             txtInput.KeyDown += txtInput_KeyDown;
         }
 
@@ -22,8 +22,14 @@ namespace EchoMessenger
                 return;
             }
 
-            // [과제 1] 리스트박스에 텍스트 추가: TextBox의 내용을 ListBox 항목으로 추가합니다.
-            lstChat.Items.Add(txtInput.Text);
+            // [과제 3] 현재 시간 정보를 "시:분:초" 형식의 문자열로 생성합니다.
+            string time = DateTime.Now.ToString("HH:mm:ss");
+
+            // [과제 3] 문자열 가공: 시간 정보를 붙이고, 입력값의 앞뒤 공백을 Trim으로 제거합니다.
+            string formattedMsg = $"[{time}] {txtInput.Text.Trim()}";
+
+            // [과제 1] 리스트박스에 텍스트 추가: 가공된 메시지를 ListBox 항목으로 추가합니다.
+            lstChat.Items.Add(formattedMsg);
 
             // [과제 1] 입력창 비우기: 추가 직후 TextBox의 내용을 비워 다음 입력을 준비합니다.
             txtInput.Clear();
@@ -43,6 +49,9 @@ namespace EchoMessenger
 
                 // 엔터키 입력 시 발생하는 시스템 경고음('띵' 소리)을 방지합니다.
                 e.SuppressKeyPress = true;
+
+                // [과제3] 엔터로 전송할 때만 개수를 업데이트함
+                lblResult.Text = "현재 대화: " + lstChat.Items.Count.ToString() + "개";
             }
         }
     }

@@ -32,6 +32,7 @@
             lstChat = new ListBox();
             txtInput = new TextBox();
             lblTitle = new Label();
+            lblResult = new Label();
             SuspendLayout();
             // 
             // btnSend
@@ -74,12 +75,24 @@
             lblTitle.TabIndex = 3;
             lblTitle.Text = "Echo Messenger";
             // 
+            // lblResult
+            // 
+            lblResult.AutoSize = true;
+            lblResult.BackColor = Color.White;
+            lblResult.Font = new Font("한컴 고딕", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            lblResult.Location = new Point(525, 22);
+            lblResult.Name = "lblResult";
+            lblResult.Size = new Size(157, 31);
+            lblResult.TabIndex = 4;
+            lblResult.Text = "현재 대화: 0개";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(800, 450);
+            Controls.Add(lblResult);
             Controls.Add(lblTitle);
             Controls.Add(txtInput);
             Controls.Add(lstChat);
@@ -97,5 +110,6 @@
         private ListBox lstChat;
         private TextBox txtInput;
         private Label lblTitle;
+        private Label lblResult;
     }
 }
