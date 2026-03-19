@@ -9,6 +9,8 @@ namespace EchoMessenger
         {
             InitializeComponent();
 
+            // [과제 2 추가] 엔터키 입력을 처리하기 위해 KeyDown 이벤트를 연결합니다.
+            txtInput.KeyDown += txtInput_KeyDown;
         }
 
         // 전송 버튼 클릭 이벤트
