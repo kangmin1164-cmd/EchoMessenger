@@ -33,6 +33,8 @@
             txtInput = new TextBox();
             lblTitle = new Label();
             lblResult = new Label();
+            btnDelete = new Button();
+            btnClear = new Button();
             SuspendLayout();
             // 
             // btnSend
@@ -86,12 +88,38 @@
             lblResult.TabIndex = 4;
             lblResult.Text = "현재 대화: 0개";
             // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.FromArgb(255, 128, 128);
+            btnDelete.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnDelete.Location = new Point(688, 152);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(100, 59);
+            btnDelete.TabIndex = 5;
+            btnDelete.Text = "선택 항목 삭제";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.Red;
+            btnClear.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnClear.Location = new Point(688, 217);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(100, 63);
+            btnClear.TabIndex = 6;
+            btnClear.Text = "전체 항목 삭제";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(800, 450);
+            Controls.Add(btnClear);
+            Controls.Add(btnDelete);
             Controls.Add(lblResult);
             Controls.Add(lblTitle);
             Controls.Add(txtInput);
@@ -111,5 +139,7 @@
         private TextBox txtInput;
         private Label lblTitle;
         private Label lblResult;
+        private Button btnDelete;
+        private Button btnClear;
     }
 }
