@@ -29,8 +29,8 @@ namespace EchoMessenger
                 return;
             }
 
-            // [과제 3] 현재 시간 정보를 "시:분:초" 형식의 문자열로 생성합니다.
-            string time = DateTime.Now.ToString("HH:mm:ss");
+            // [과제 3] 현재 시간 정보를 "년-월-일 시:분:초" 형식의 문자열로 생성합니다.
+            string time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
             // [과제 3] 문자열 가공: 시간 정보를 붙이고, 입력값의 앞뒤 공백을 Trim으로 제거합니다.
             string formattedMsg = $"[{time}] {txtInput.Text.Trim()}";
