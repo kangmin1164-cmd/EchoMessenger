@@ -36,6 +36,9 @@ namespace EchoMessenger
 
             // [과제 2] 포커스 유지: 전송 후 자동으로 입력창에 커서를 위치시킵니다.
             txtInput.Focus();
+
+            // [과제 3 추가] 상태 표시: 현재 리스트박스에 쌓인 아이템의 개수를 라벨에 표시합니다.
+            lblResult.Text = "현재 대화: " + lstChat.Items.Count.ToString() + "개";
         }
 
         // [과제 2] 텍스트박스에서 키가 눌렸을 때 실행되는 함수
@@ -49,9 +52,6 @@ namespace EchoMessenger
 
                 // 엔터키 입력 시 발생하는 시스템 경고음('띵' 소리)을 방지합니다.
                 e.SuppressKeyPress = true;
-
-                // [과제3] 엔터로 전송할 때만 개수를 업데이트함
-                lblResult.Text = "현재 대화: " + lstChat.Items.Count.ToString() + "개";
             }
         }
     }
