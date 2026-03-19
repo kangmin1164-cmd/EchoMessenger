@@ -37,7 +37,7 @@
             // btnSend
             // 
             btnSend.BackColor = Color.FromArgb(0, 192, 0);
-            btnSend.Font = new Font("한컴 고딕", 10F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnSend.Font = new Font("한컴 고딕", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 129);
             btnSend.Location = new Point(589, 394);
             btnSend.Name = "btnSend";
             btnSend.Size = new Size(93, 46);
